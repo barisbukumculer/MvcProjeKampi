@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<html>
+
+<body>
+    <div style="display:flex; justify-content:space-between" >
+        <div class="card" , style="background-color:aqua; width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Toplam Kategori Sayısı:</h5>
+                <p class="card-text" ; style="font-size:larger; margin-left:100px; ">@ViewBag.categoryCount</p>
+
+                <a href="/Category/Index" class="btn btn-primary">Kategorilere git</a>
+            </div>
+        </div>
+      
+        <div class="card" , style="background-color:chocolate; width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Yazılım Kategorisindeki Başlık Sayısı:</h5>
+                <p class="card-text" ; style="font-size:larger; margin-left:100px; ">@ViewBag.yazilimheadingCount</p>
+
+                <a href="/Category/Index" class="btn btn-primary">Kategorilere git</a>
+            </div>
+        </div>
+        
+        <div class="card" , style="background-color:darkmagenta; width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" ; style="color:aliceblue">İsminin İçinde 'a' Geçen Yazar Sayısı:</h5>
+                <p class="card-text" ; style="font-size:larger;color:aliceblue; margin-left:100px; ">@ViewBag.AWriters</p>
+                <a href="/Writers/Index" class="btn btn-primary">Yazarlara git</a>
+            </div>
+        </div>
+
+        <div class="card" , style="background-color:blueviolet; width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" ; style="color:aliceblue">En fazla Başlığa Sahip Kategori Adı:</h5>
+                <p class="card-text" ; style="font-size:larger;color:aliceblue; ">@ViewBag.maxheadingCategory</p>
+                <a href="/Headings/Index" class="btn btn-primary">Başlıklara git</a>
+            </div>
+        </div>
+
+        <div class="card" , style="background-color:green; width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" ; style="color:aliceblue">Kategori Durumu 'true' olan Kategoriler ile 'false olan Kategorilerin Farkı:</h5>
+                <p class="card-text" ; style="font-size:larger;color:aliceblue; margin-left:100px; ">@ViewBag.falseandtruecategory</p>
+                <a href="/Category/Index" class="btn btn-primary">Kategorilere git</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
