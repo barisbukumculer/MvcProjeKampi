@@ -139,9 +139,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\WriterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,6 +204,8 @@
     <Content Include="Theme\AdminLTE-3.0.4\dist\img\1.jpg" />
     <Content Include="Theme\AdminLTE-3.0.4\dist\img\2.png" />
     <Content Include="Theme\AdminLTE-3.0.4\dist\img\4.png" />
+    <Content Include="Theme\AdminLTE-3.0.4\dist\img\admin.jpg" />
+    <Content Include="Theme\AdminLTE-3.0.4\dist\img\BARIS.jpg" />
     <Content Include="Theme\AdminLTE-3.0.4\dist\img\AdminLTELogo.png" />
     <Content Include="Theme\AdminLTE-3.0.4\dist\img\avatar.png" />
     <Content Include="Theme\AdminLTE-3.0.4\dist\img\avatar04.png" />
@@ -2285,6 +2289,11 @@
     <Content Include="Views\AdminCategory\AddCategory.cshtml" />
     <Content Include="Views\AdminCategory\UpdateCategory.cshtml" />
     <Content Include="Views\Statistic\Index.cshtml" />
+    <Content Include="Views\Writer\Index.cshtml" />
+    <Content Include="Views\Writer\AddWriter.cshtml" />
+    <Content Include="Views\Writer\EditWriter.cshtml" />
+    <Content Include="Views\Heading\Index.cshtml" />
+    <Content Include="Views\Heading\AddHeading.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

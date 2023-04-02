@@ -73,6 +73,18 @@
     <Compile Include="Migrations\202303202354113_mg1.designer.cs">
       <DependentUpon>202303202354113_mg1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304011645401_mig1_writer_edit.cs" />
+    <Compile Include="Migrations\202304011645401_mig1_writer_edit.designer.cs">
+      <DependentUpon>202304011645401_mig1_writer_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304012113234_writer-title-add.cs" />
+    <Compile Include="Migrations\202304012113234_writer-title-add.designer.cs">
+      <DependentUpon>202304012113234_writer-title-add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304012307483_mig-image.cs" />
+    <Compile Include="Migrations\202304012307483_mig-image.designer.cs">
+      <DependentUpon>202304012307483_mig-image.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -89,6 +101,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202303202354113_mg1.resx">
       <DependentUpon>202303202354113_mg1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304011645401_mig1_writer_edit.resx">
+      <DependentUpon>202304011645401_mig1_writer_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304012113234_writer-title-add.resx">
+      <DependentUpon>202304012113234_writer-title-add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304012307483_mig-image.resx">
+      <DependentUpon>202304012307483_mig-image.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
