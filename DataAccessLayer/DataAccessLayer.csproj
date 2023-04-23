@@ -56,7 +56,10 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IImageFileDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\ISkillDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -68,6 +71,9 @@
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfImageFileDal.cs" />
+    <Compile Include="EntityFramework\EfMessageDal.cs" />
+    <Compile Include="EntityFramework\EfSkillDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202303202354113_mg1.cs" />
     <Compile Include="Migrations\202303202354113_mg1.designer.cs">
@@ -96,6 +102,34 @@
     <Compile Include="Migrations\202304021432492_add-headingstatus.cs" />
     <Compile Include="Migrations\202304021432492_add-headingstatus.designer.cs">
       <DependentUpon>202304021432492_add-headingstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304082000428_mig_addmessageconcrete.cs" />
+    <Compile Include="Migrations\202304082000428_mig_addmessageconcrete.designer.cs">
+      <DependentUpon>202304082000428_mig_addmessageconcrete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304090058196_contactdate.cs" />
+    <Compile Include="Migrations\202304090058196_contactdate.designer.cs">
+      <DependentUpon>202304090058196_contactdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304092211200_imagefile-add.cs" />
+    <Compile Include="Migrations\202304092211200_imagefile-add.designer.cs">
+      <DependentUpon>202304092211200_imagefile-add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304092335389_admin_table.cs" />
+    <Compile Include="Migrations\202304092335389_admin_table.designer.cs">
+      <DependentUpon>202304092335389_admin_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304112324417_skills.cs" />
+    <Compile Include="Migrations\202304112324417_skills.designer.cs">
+      <DependentUpon>202304112324417_skills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304112328334_skills2.cs" />
+    <Compile Include="Migrations\202304112328334_skills2.designer.cs">
+      <DependentUpon>202304112328334_skills2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304112330513_skills3.cs" />
+    <Compile Include="Migrations\202304112330513_skills3.designer.cs">
+      <DependentUpon>202304112330513_skills3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,6 +165,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304021432492_add-headingstatus.resx">
       <DependentUpon>202304021432492_add-headingstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304082000428_mig_addmessageconcrete.resx">
+      <DependentUpon>202304082000428_mig_addmessageconcrete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304090058196_contactdate.resx">
+      <DependentUpon>202304090058196_contactdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304092211200_imagefile-add.resx">
+      <DependentUpon>202304092211200_imagefile-add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304092335389_admin_table.resx">
+      <DependentUpon>202304092335389_admin_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304112324417_skills.resx">
+      <DependentUpon>202304112324417_skills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304112328334_skills2.resx">
+      <DependentUpon>202304112328334_skills2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304112330513_skills3.resx">
+      <DependentUpon>202304112330513_skills3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
