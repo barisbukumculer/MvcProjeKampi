@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
@@ -14,14 +15,18 @@ namespace MvcProjeKampi.Controllers
         // GET: WriterPanel
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        Context c = new Context();
+      
         public ActionResult WriterProfile()
         {
             return View();
         }
         [AllowAnonymous]
-        public ActionResult MyHeading()
+        public ActionResult MyHeading(string p)
         {
-            var values = hm.GetListByWriter();
+            p = (string)Session["WriterMail"];
+           var writeridinfo=c.Writers.Where(x=>x.WriterMail==p).Select(y=>y.WriterID).FirstOrDefault();
+            var values = hm.GetListByWriter(writeridinfo);
             return View(values);
         }
         [HttpGet]
@@ -39,8 +44,10 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult NewHeading(Heading heading)
         {
+            string writermailinfo = (string)Session["WriterMail"];
+            var writeridinfo = c.Writers.Where(x => x.WriterMail == writermailinfo).Select(y => y.WriterID).FirstOrDefault();
             heading.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-            heading.WriterID = 4;
+            heading.WriterID = writeridinfo;
             heading.HeadingStatus = true;
             hm.HeadingAdd(heading);
             return RedirectToAction("MyHeading");
@@ -62,6 +69,23 @@ namespace MvcProjeKampi.Controllers
         public ActionResult EditHeading(Heading heading)
         {
             hm.HeadingUpdate(heading);
+            return RedirectToAction("MyHeading");
+        }
+        public ActionResult DeleteHeading(int id)
+        {
+            var deleteheadingvalue = hm.GetByID(id);
+
+            hm.HeadingDelete(deleteheadingvalue);
+            if (deleteheadingvalue.HeadingStatus == true)
+            {
+                deleteheadingvalue.HeadingStatus = false;
+                hm.HeadingDelete(deleteheadingvalue);
+            }
+            else
+            {
+                deleteheadingvalue.HeadingStatus = true;
+                hm.HeadingDelete(deleteheadingvalue);
+            }
             return RedirectToAction("MyHeading");
         }
     }
