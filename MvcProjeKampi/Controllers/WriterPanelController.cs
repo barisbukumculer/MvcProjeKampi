@@ -88,5 +88,10 @@ namespace MvcProjeKampi.Controllers
             }
             return RedirectToAction("MyHeading");
         }
+        public ActionResult AllHeadings()
+        {
+            var headings=hm.GetList ();
+            return View(headings);
+        }
     }
 }
