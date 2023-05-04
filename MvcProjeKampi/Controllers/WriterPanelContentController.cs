@@ -40,6 +40,7 @@ namespace MvcProjeKampi.Controllers
             cm.ContentAdd(content);
             return RedirectToAction("MyContent");
         }
+        [AllowAnonymous]
         public ActionResult ToDoList()
         {
             return View();

@@ -19,16 +19,16 @@ namespace MvcProjeKampi.Controllers
         MessageValidator messagevalidator = new MessageValidator();
 
         [Authorize]
-        public ActionResult Inbox()
+        public ActionResult Inbox(string p)
         {
             ViewBag.InMessageCount = context.Messages.Where(c => c.ReceiverMail == "admin@gmail.com").Count();
-            var messagelist = mm.GetListInbox();
+            var messagelist = mm.GetListInbox(p);
             return View(messagelist);
         }
-        public ActionResult Sendbox()
+        public ActionResult Sendbox(string p)
         {
             ViewBag.SendMessageCount = context.Messages.Where(c => c.SenderMail == "admin@gmail.com").Count();
-            var messagelist = mm.GetListSendbox();
+            var messagelist = mm.GetListSendbox(p);
             return View(messagelist);
         }
         public ActionResult GetInBoxMessageDetails(int id)

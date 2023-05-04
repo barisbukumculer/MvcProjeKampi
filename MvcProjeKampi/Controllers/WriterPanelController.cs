@@ -7,6 +7,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
+using BusinessLayer.ValidationRules;
+using FluentValidation.Results;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -15,10 +19,35 @@ namespace MvcProjeKampi.Controllers
         // GET: WriterPanel
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        WriterManager wm = new WriterManager(new EfWriterDal());
         Context c = new Context();
-      
-        public ActionResult WriterProfile()
+
+        [HttpGet]
+        public ActionResult WriterProfile(int id=0)
         {
+          string  p = (string)Session["WriterMail"];
+            id = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
+            var writervalue=wm.GetByID(id);
+            return View(writervalue);
+        }
+        [HttpPost]
+        public ActionResult WriterProfile(Writer writer)
+        {
+            WriterValidator writervalidator = new WriterValidator();
+            ValidationResult result = writervalidator.Validate(writer);
+            if (result.IsValid)
+            {
+                wm.WriterUpdate(writer);
+                return RedirectToAction("AllHeadings","WriterPanel");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
             return View();
         }
         [AllowAnonymous]
@@ -88,9 +117,9 @@ namespace MvcProjeKampi.Controllers
             }
             return RedirectToAction("MyHeading");
         }
-        public ActionResult AllHeadings()
+        public ActionResult AllHeadings(int p =1)
         {
-            var headings=hm.GetList ();
+            var headings=hm.GetList ().ToPagedList(p,4);
             return View(headings);
         }
     }
