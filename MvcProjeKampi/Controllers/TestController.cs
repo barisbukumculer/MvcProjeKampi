@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
+    [AllowAnonymous]
     public class TestController : Controller
     {
         // GET: Test
@@ -18,6 +19,10 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
         public ActionResult Test3()
+        {
+            return View();
+        }
+        public ActionResult SweetAlert()
         {
             return View();
         }

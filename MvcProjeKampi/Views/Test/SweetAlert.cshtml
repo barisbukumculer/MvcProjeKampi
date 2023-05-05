@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "SweetAlert";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<br />
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<button class="btn btn-primary" id="btn1">Button1</button>
+<button class="btn btn-warning" id="btn2">Button2</button>
+<button class="btn btn-danger" id="btn3">Button3</button>
+<button class="btn btn-dark" id="btn4">Button4</button>
+
+
+<script>
+    $('#btn1').click(function () {
+        swal("Merhaba Mvc Proje Kampı!");
+    });
+</script>
+
+<script>
+    $('#btn2').click(function () {
+        swal("Merhaba!", "Hoş geldiniz. Ders 96!");
+    });
+</script>
+
+<script>
+    $('#btn3').click(function () {
+        swal("Eklendi!", "Başarılı bir şekilde eklendi!", "success");
+    });
+</script>
+
+<script>
+    $('#btn4').click(function () {
+        swal({
+            title: "Emin misiniz?",
+            text: "Veri Kalıcı olarak silinecek!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Silindi!", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Bir işlem yapılmadı!");
+                }
+            });
+    });
+</script>

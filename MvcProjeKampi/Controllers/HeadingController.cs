@@ -20,6 +20,12 @@ namespace MvcProjeKampi.Controllers
             var headingvalues = hm.GetList();
             return View(headingvalues);
         }
+        [AllowAnonymous]
+        public ActionResult HeadingReport()
+        {
+            var headingvalues = hm.GetList();
+            return View(headingvalues);
+        }
         [HttpGet]
         public ActionResult AddHeading()
         {
